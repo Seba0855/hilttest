@@ -9,6 +9,6 @@ class Application : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        Timber.plant()
+        Timber.plant(Timber.DebugTree())
     }
 }

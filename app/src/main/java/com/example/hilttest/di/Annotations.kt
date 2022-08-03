@@ -9,3 +9,11 @@ annotation class Bolek
 @Qualifier
 @Retention(AnnotationRetention.RUNTIME)
 annotation class Lolek
+
+@Qualifier
+@Retention(AnnotationRetention.RUNTIME)
+annotation class LolekURL
+
+@Qualifier
+@Retention(AnnotationRetention.RUNTIME)
+annotation class BolekURL

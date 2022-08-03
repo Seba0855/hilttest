@@ -1,6 +1,5 @@
 package com.example.hilttest.presentation
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,14 +11,16 @@ import com.example.hilttest.di.Bolek
 import com.example.hilttest.di.Lolek
 import com.example.hilttest.inflate
 import dagger.hilt.android.AndroidEntryPoint
-import dagger.hilt.android.lifecycle.HiltViewModel
+import retrofit2.Retrofit
+import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment: Fragment() {
     private lateinit var viewModel: HomeViewModel
     @Inject @Bolek lateinit var bolek: String
     @Inject @Lolek lateinit var lolek: String
+    @Inject lateinit var retrofit: Retrofit
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,6 +34,6 @@ class HomeFragment : Fragment() {
         view.findViewById<TextView>(R.id.bolek).text = bolek
         view.findViewById<TextView>(R.id.lolek).text = lolek
 
+        Timber.e(retrofit.baseUrl().toString())
     }
-
 }
