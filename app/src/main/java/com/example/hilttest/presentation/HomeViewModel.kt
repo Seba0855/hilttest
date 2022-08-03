@@ -6,12 +6,7 @@ import com.example.hilttest.di.Bolek
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
-class HomeViewModel @Inject constructor(
-    @Bolek lateinit var chopek: String
-) : ViewModel() {
+class HomeViewModel: ViewModel() {
     // TODO: Implement the ViewModel
-
-    val liveData = MutableLiveData(chopek)
 
 }
